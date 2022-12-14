@@ -6,33 +6,52 @@
   box-sizing: border-box;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 0px) {
   .container {
     width: 100%;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
     margin: auto;
   }
 }
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 800px) {
+  .container {
+    width: 90%;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+  }
+}
+@media screen and (min-width: 1000px) {
   .container {
     width: 80%;
-    border: 1px solid black;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
     margin: auto;
   }
 }
-
-header {
-  height: 100px;
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 60%;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: auto;
+  }
+}
+header, main, footer {
+  margin: 20px 0px;
 }
 
-.contain {
-  background-color: red;
-  font-size: 24px;
+.header {
+  height: 10vh;
 }
-.contain .first, .contain .second {
-  width: 200px;
-  height: 300px;
-  border: 2px solid yellow;
+
+.main {
+  height: 50vh;
+}
+
+.footer {
+  height: 20vh;
 }
 
 /*# sourceMappingURL=style.css.map */

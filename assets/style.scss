@@ -9,93 +9,97 @@
 
 
 
-@mixin containerT($containerWidth) {
+        @mixin containerS($screenWidth, $containerWidth) {
    
 
-    width: $containerWidth;
-    border: 1px solid black;
-    margin: auto;
+            @media screen and (min-width:$screenWidth) {
 
+                .container {
+                    width: $containerWidth;
+                    border: 1px solid rgb(0, 0, 0);
+                    background-color: rgba(0, 0, 0, 0.5);
+                    margin: auto;
+                }
+            
+                    
+                }
+        
+          
+        }
+
+       
+   
+@include containerS(0px,100% );
+
+@include containerS(800px,90% );
+
+@include containerS(1000px,80% );
+@include containerS(1200px,60% );
 
 
   
+
+
+
+header, main, footer {
+    margin: 20px 0px;
 }
 
-@mixin widthC {
-
-    
-    @media screen and (max-width: 800px) {
-
-        @include containerT(100%) ;
-         
-       }
 
 
-    @media screen and (max-width: 1000px) {
-        @include containerT(80%) ;
-      
-       }
+.header {
+
+    height: 10vh;
    
-}
-
-  
-
-
-.container {
-
-    @include widthC;
     
 }
+.main {
+    height: 50vh;
+}
+
+.footer {
+    height: 20vh;
+}
 
 
 
 
-header {
 
-    height: 100px;
+
+// $bColor: red;
+// $color: green;
+// $borderColor: yellow;
+
+// @mixin mField($width: 200px, $height) {
+//     width: $width;
+//     height: $height;
+// }
+
+// @mixin mBorder($borderWidth: 10px, $borderStyle){
     
-}
+//     border: $borderWidth $borderStyle $borderColor;
+// }
 
-
-
-
-
-
-
-$bColor: red;
-$color: green;
-$borderColor: yellow;
-
-@mixin mField($width: 200px, $height) {
-    width: $width;
-    height: $height;
-}
-
-@mixin mBorder($borderWidth: 10px, $borderStyle){
-    
-    border: $borderWidth $borderStyle $borderColor;
-}
-
-$font-sizes: ("small": 12px, "normal": 18px, "large": 24px);
+// $font-sizes: ("small": 12px, "normal": 18px, "large": 24px);
    
 
 
-.contain {
+// .contain {
     
 
-    background-color: $bColor;
-    font-size:  map-get($font-sizes, "large");
+//     background-color: $bColor;
+//     font-size:  map-get($font-sizes, "large");
 
-    .first {
-        @include mField($height: 300px);
-        @include mBorder(2px, solid )
-    }
-    .second {
-        // @include mBorder( 5px, solid);
-        @extend .first;
-    }
+//     .first {
+//         @include mField($height: 300px);
+//         @include mBorder(2px, solid )
+//     }
+//     .second {
+//         // @include mBorder( 5px, solid);
+//         @extend .first;
+//     }
 
-}
+// }
 
 
 
